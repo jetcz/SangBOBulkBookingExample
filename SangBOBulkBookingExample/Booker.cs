@@ -24,7 +24,7 @@ namespace SangBOBulkBookingExample
 			for (int i = 0; i < 10; i++) //lets say we are booking 10 orders in total
 			{
 				Order o = new Order(_ui);
-				o.Knowledgebase = hlp; //in the future, this will be possible to set via Order constructor
+				o.Knowledgebase = hlp; //in the future, this will be possible to set via constructor
 				//now set order properties however you want
 
 				o.Save(OrderSaveAction.FormSave);
@@ -32,7 +32,7 @@ namespace SangBOBulkBookingExample
 				for (int j = 0; j < 10; j++) //lets say we are booking 10 ads into this order
 				{
 					ad = new AdDisplay(_ui, o.OrderID, false); //in the future, we'll implement a constructor to accept the Order object which you already have, instead of loading the Order in the Ad constructor
-					ad.AdSaveHelper = hlp;
+					ad.AdSaveHelper = hlp; //in the future, this will be possible to set via constructor
 					//now set your ad properties however you want
 
 					ad.SaveAd(AdSaveAction.FormSave, 12345);
